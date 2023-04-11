@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List Student</title>
+
+</head>
+<body>
+
+<table>
+    <thead>
+
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>surname</th>
+
+
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+    <tr th:each="st:${students}">
+
+        <td th:text="${st.id}"></td>
+        <td th:text="${st.name}"></td>
+        <td th:text="${st.surname}"></td>
+
+
+        <td>
+        <select>
+          <option th:each="cr:${st.courseList}" th:text="${cr.name}"></option>
+
+        </select>
+
+
+        </td>
+
+
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>

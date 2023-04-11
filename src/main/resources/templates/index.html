@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/student/new">add student</a>
+<br>
+<a href="/student/list"> student list</a>
+
+
+
+
+
+
+<form action="/student/update" method="post">
+    update student with id<input type="text" name="id">
+    <input type="submit" value="enter">
+
+
+</form>
+
+<form action="/student/delete" method="post">
+
+    delete student with id<input type="text" name="id">
+    <input type="submit" value="delete">
+
+</form>
+</body>
+
+
+
+</html>

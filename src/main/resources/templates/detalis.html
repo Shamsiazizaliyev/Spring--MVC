@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/student/save}" th:object="${student}" method="post">
+
+   <div th:if="${#fields.hasErrors('*')}">
+
+       <p  class="error"> please correct errors below
+
+       </p>
+
+   </div>
+
+    Enter id : <input type="text" th:field="*{id}"/><br>
+
+    <div th:if="${#fields.hasErrors('id')}">
+    <ul>
+        <li th:each="err : ${#fields.errors('id')}" th:text="${err}" />
+    </ul>
+
+    </div>
+
+
+    Enter name <input type="text" th:field="*{name}"/><br>
+
+    <div th:if="${#fields.hasErrors('name')}">
+        <ul>
+            <li th:each="err : ${#fields.errors('name')}" th:text="${err}" />
+        </ul>
+
+    </div>
+    Enter surname <input type="text" th:field="*{surname}"/><br>
+
+    <p th:each="cr:${courses}">
+
+        <input name="courses" th:value="${cr.id}" type="checkbox">
+        <label th:text="${cr.name}"></label>
+    </p>
+
+
+    <input type="submit" value="add">
+
+</form>
+
+
+</body>
+
+</html>
